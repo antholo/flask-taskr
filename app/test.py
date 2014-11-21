@@ -67,7 +67,7 @@ class AllTests(unittest.TestCase):
         self.assertIn('Please register to start a task list', response.data)
 
 
-    def test_user_registration_error(self):
+    def test_duplicate_user_registration_throws_error(self):
         self.app.get('register/', follow_redirects=True)
         response = self.register('Michael', 'michael@realpython.com', 'python', 'python')
         self.app.get('register/', follow_redirects=True)
@@ -149,6 +149,11 @@ class AllTests(unittest.TestCase):
         self.login('Fletcher', 'python101')
         response = self.app.get("complete/1/", follow_redirects=True)
         self.assertNotIn('The task was marked as complete. Nice.', response.data)
+
+
+    def test_user_registration_field_errors(self):
+        response = self.register('Michael', 'michael@realpython.com', 'python', '')
+        self.assertIn('This field is required.', response.data)
 
 
 ###########
