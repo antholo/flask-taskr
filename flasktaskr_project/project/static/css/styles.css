@@ -1,0 +1,12 @@
+body {
+    padding: 60px 0px;
+    background: #ffffff;
+}
+.error {
+    color: red;
+    font-size: .8em;
+}
+
+.footer{
+    padding-top: 30px;
+}

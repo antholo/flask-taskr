@@ -76,7 +76,7 @@ def login():
     if request.method == 'GET':
         return render_template("login.html", form=form, error=error)
 
-
+AddTaskForm
 # View tasks
 @app.route('/tasks/')
 @login_required
@@ -92,7 +92,7 @@ def tasks():
 
 
 # Add new tasks
-@app.route('/add/', methods=['GET', 'POST'])
+@app.route('/add/', methods=['GET', 'POST'])http://www.apa.org/news/press/releases/2014/03/black-boys-older.aspx
 @login_required
 def new_task():
     import datetime
